@@ -3,7 +3,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: nodejs-app
-  namespace: default
+  namespace: prod
   labels:
     app: nodejs-app
 spec:
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: nodejs-app
-        image: "devopshint/nodejsapp-1.0:latest"
+        image: hazemhashem100/nodejs-demo:latest
         ports:
           - containerPort: 3000
 ---
@@ -26,7 +26,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nodejs-app
-  namespace: default
+  namespace: prod
 spec:
   selector:
     app: nodejs-app
