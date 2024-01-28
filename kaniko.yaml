@@ -11,15 +11,15 @@ spec:
   template:
     metadata:
       labels:
-        app: kaniko
+        app:
     spec:
       containers:
         - name: kaniko
           image: gcr.io/kaniko-project/executor:v1.6.0-debug
           imagePullPolicy: Always
           args:
-            - "--context=git://github.com/hazemhashem881/Visitor-nodejs.git"
-            - "--destination=hazemhashem100/vistor:latest"
+            - "--context=git://github.com/hazemhashem881/CICD-Nodejs.git"
+            - "--destination=hazemhashem100/nodejs-demo:latest"
             - "--dockerfile=Dockerfile"
           volumeMounts:
             - name: kaniko-secret
